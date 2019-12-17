@@ -1,5 +1,5 @@
 
-import StoreBase from '../../index';
+import StoreBase from '../../lib/index';
 
 // 声明用户信息
 const userInfoStore = new StoreBase({
