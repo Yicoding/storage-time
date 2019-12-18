@@ -1,6 +1,6 @@
 {
   "name": "storage-time",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a local storage plugin with time for JavaScript",
   "main": "index.js",
   "license": "ISC",
