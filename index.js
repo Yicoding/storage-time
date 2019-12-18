@@ -22,11 +22,11 @@ var storage = window.localStorage;
 var StoreBase =
 /*#__PURE__*/
 function () {
-  function StoreBase(obj) {
+  function StoreBase(props) {
     _classCallCheck(this, StoreBase);
 
-    this.key = obj.key;
-    this.lifeTime = obj.lifeTime;
+    this.key = props.key;
+    this.lifeTime = props.lifeTime;
   } // 获取值
 
 
@@ -37,15 +37,15 @@ function () {
 
       if (Object.prototype.toString.call(value) === '[object Null]') {
         // 不存在的情况
-        return false;
-      } else {
-        // 存在时，判断是否过期
-        var currentTime = (0, _tools.changeDate)(Date.now(), 'yyyy-MM-dd HH:mm:ss');
+        return null;
+      } // 存在时，判断是否过期
 
-        if (currentTime > value.validDate) {
-          // 已过期
-          return false;
-        }
+
+      var currentTime = (0, _tools.changeDate)(Date.now(), 'yyyy-MM-dd HH:mm:ss');
+
+      if (currentTime > value.validDate) {
+        // 已过期
+        return null;
       }
 
       return value;
