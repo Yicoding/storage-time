@@ -1,16 +1,12 @@
 {
   "name": "storage-time",
-  "version": "1.0.0",
-  "description": "一款带时间存储的js本地存储插件",
+  "version": "1.0.1",
+  "description": "a local storage plugin with time for JavaScript",
   "main": "index.js",
   "license": "ISC",
   "private": false,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": ["storage"],
+  "keywords": ["storage", "JavaScript", "time"],
   "author": "Ecode",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/Yicoding/storage-time.git"

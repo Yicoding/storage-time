@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _tools = require("./lib/tools");
+var _tools = require("./tools");
 
 function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
 
@@ -87,8 +87,8 @@ function () {
     } // 合并值
 
   }, {
-    key: "assignObj",
-    value: function assignObj(value) {
+    key: "merge",
+    value: function merge(value) {
       this.set(value, true);
     } // 改变单个字段的值
 

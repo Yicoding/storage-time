@@ -1,35 +1,36 @@
 # storage-time
-一款带时间存储的js本地存储插件
+一款带时间存储的JavaScript本地存储插件
+a local storage plugin with time for JavaScript
 
 ```
 import StoreBase from 'storage-time';
 
-// 声明用户信息
+// create userInfo
 const userInfoStore = new StoreBase({
   key: 'USER_INFO',
-  lifeTime: '30D'
+  lifeTime: '30D' // D: day, eg: 0.5D
 });
 
-// 存储用户信息
+// save userInfo
 userInfoStore.set({
   name: 'Ecode',
   password: 123,
   mobile: 1000000000
 });
 
-// 读取用户信息
+// read userInfo
 console.log('USER_INFO', userInfoStore.get());
 
-// 合并字段
-userInfoStore.assignObj({
+// merge field
+userInfoStore.merge({
   name: 'Yicoding',
   age: 20
 });
 
-// 修改单个信息
+// edit single field
 userInfoStore.setAttrValue('password', 456);
 
-// 删除用户信息
+// remove userInfo
 userInfoStore.remove();
 
 ```
