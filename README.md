@@ -20,15 +20,50 @@ userInfoStore.set({
 
 // read userInfo
 console.log('USER_INFO', userInfoStore.get());
+/*
+  {
+    saveDate: "2019-12-18 15:06:22",
+    validDate: "2020-01-17 15:06:22",
+    value: {
+      name: "Ecode",
+      password: 123,
+      mobile: 1000000000
+    }
+  }
+*/
 
 // merge field
 userInfoStore.merge({
   name: 'Yicoding',
   age: 20
 });
+/*
+  {
+    saveDate: "2019-12-18 15:06:22",
+    validDate: "2020-01-17 15:06:22",
+    value: {
+      name: "Yicoding",
+      password: 123,
+      mobile: 1000000000,
+      age: 20
+    }
+  }
+*/
 
 // edit single field
 userInfoStore.setAttrValue('password', 456);
+/*
+  {
+    saveDate: "2019-12-18 15:06:22",
+    validDate: "2020-01-17 15:06:22",
+    value: {
+      name: "Yicoding",
+      password: 456,
+      mobile: 1000000000,
+      age: 20
+    }
+  }
+*/
 
 // remove userInfo
 userInfoStore.remove();
