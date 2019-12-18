@@ -1,6 +1,7 @@
 # storage-time
 一款带时间存储的JavaScript本地存储插件  
-a local storage plugin with time for JavaScript
+a local storage plugin with time for JavaScript  
+github：https://github.com/Yicoding/storage-time
 
 ```
 import StoreBase from 'storage-time';
