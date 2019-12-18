@@ -51,7 +51,7 @@ userInfoStore.merge({
 */
 
 // edit single field
-userInfoStore.setAttrValue('password', 456);
+userInfoStore.setAttr('password', 456);
 /*
   {
     saveDate: "2019-12-18 15:06:22",

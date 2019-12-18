@@ -93,8 +93,8 @@ function () {
     } // 改变单个字段的值
 
   }, {
-    key: "setAttrValue",
-    value: function setAttrValue(name, value) {
+    key: "setAttr",
+    value: function setAttr(name, value) {
       var oldVal = JSON.parse(storage.getItem(this.key)); // 存储日期
 
       var saveDate = (0, _tools.changeDate)(Date.now(), 'yyyy-MM-dd HH:mm:ss');

@@ -25,5 +25,5 @@ userInfoStore.merge({
 console.log('USER_INFO', userInfoStore.get());
 
 // edit single field
-userInfoStore.setAttrValue('password', 456);
+userInfoStore.setAttr('password', 456);
 console.log('USER_INFO', userInfoStore.get());
