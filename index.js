@@ -27,24 +27,30 @@ function () {
 
     this.key = props.key;
     this.lifeTime = props.lifeTime;
-  } // 获取值
-
+  }
 
   _createClass(StoreBase, [{
+    key: "isEmpty",
+    value: function isEmpty() {
+      return storage.getItem(this.key) ? false : true;
+    } // 获取值
+
+  }, {
     key: "get",
     value: function get() {
       var value = JSON.parse(storage.getItem(this.key));
 
-      if (Object.prototype.toString.call(value) === '[object Null]') {
+      if (this.isEmpty()) {
         // 不存在的情况
         return null;
       } // 存在时，判断是否过期
 
 
-      var currentTime = (0, _tools.changeDate)(Date.now(), 'yyyy-MM-dd HH:mm:ss');
+      var currentTime = (0, _tools.ChangeDate)(Date.now(), 'yyyy-MM-dd HH:mm:ss');
 
       if (currentTime > value.validDate) {
         // 已过期
+        this.remove();
         return null;
       }
 
@@ -57,11 +63,11 @@ function () {
       var concat = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var oldVal = JSON.parse(storage.getItem(this.key)); // 存储日期
 
-      var saveDate = (0, _tools.changeDate)(Date.now(), 'yyyy-MM-dd HH:mm:ss');
+      var saveDate = (0, _tools.ChangeDate)(Date.now(), 'yyyy-MM-dd HH:mm:ss');
       var day = parseFloat(this.lifeTime);
       var targetTime = Date.now() + day * 24 * 3600 * 1000; // 过期日期
 
-      var validDate = (0, _tools.changeDate)(targetTime, 'yyyy-MM-dd HH:mm:ss'); // 存储对象
+      var validDate = (0, _tools.ChangeDate)(targetTime, 'yyyy-MM-dd HH:mm:ss'); // 存储对象
 
       var item = {
         saveDate: saveDate,
@@ -70,7 +76,7 @@ function () {
 
       if (concat) {
         // 合并
-        if (Object.prototype.toString.call(oldVal) === '[object Null]') {
+        if (this.isEmpty()) {
           // 不存在的情况，直接赋值
           item.value = value;
           storage.setItem(this.key, JSON.stringify(item));
@@ -97,18 +103,18 @@ function () {
     value: function setAttr(name, value) {
       var oldVal = JSON.parse(storage.getItem(this.key)); // 存储日期
 
-      var saveDate = (0, _tools.changeDate)(Date.now(), 'yyyy-MM-dd HH:mm:ss');
+      var saveDate = (0, _tools.ChangeDate)(Date.now(), 'yyyy-MM-dd HH:mm:ss');
       var day = parseFloat(this.lifeTime);
       var targetTime = Date.now() + day * 24 * 3600 * 1000; // 过期日期
 
-      var validDate = (0, _tools.changeDate)(targetTime, 'yyyy-MM-dd HH:mm:ss'); // 存储对象
+      var validDate = (0, _tools.ChangeDate)(targetTime, 'yyyy-MM-dd HH:mm:ss'); // 存储对象
 
       var item = {
         saveDate: saveDate,
         validDate: validDate
       };
 
-      if (Object.prototype.toString.call(oldVal) === '[object Null]') {
+      if (this.isEmpty()) {
         // 不存在的情况，直接赋值
         item.value = _defineProperty({}, name, value);
         storage.setItem(this.key, JSON.stringify(item));

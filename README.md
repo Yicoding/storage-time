@@ -69,4 +69,7 @@ userInfoStore.setAttr('password', 456);
 // remove userInfo
 userInfoStore.remove();
 
+// judge isEpmty
+userInfoStore.isEmpty()
+
 ```

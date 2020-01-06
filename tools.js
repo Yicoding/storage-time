@@ -3,12 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.changeDate = changeDate;
+exports.ChangeDate = ChangeDate;
 
 /**
  * 时间格式
  */
-function changeDate(time, format) {
+function ChangeDate(time, format) {
   var t = new Date(time);
 
   var tf = function tf(i) {
