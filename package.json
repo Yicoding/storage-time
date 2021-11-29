@@ -1,14 +1,32 @@
 {
   "name": "storage-time",
-  "version": "1.0.4",
-  "description": "a local storage plugin with time for JavaScript",
-  "main": "index.js",
-  "license": "ISC",
-  "private": false,
-  "keywords": ["storage", "JavaScript", "time"],
+  "version": "1.0.5",
+  "description": "a local time storage plugin for js",
+  "main": "dist/index.js",
+  "sideEffects": false,
   "author": "Ecode",
+  "license": "MIT",
+  "keywords": [
+    "storage",
+    "js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Yicoding/storage-time.git"
+  },
+  "scripts": {
+    "babel": "npx babel src --out-dir babel-output",
+    "webpack": "webpack",
+    "rollup": "npx rollup src/index.js -d rollup-output --format iife",
+    "server": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-loader": "^8.2.3",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
   }
 }
