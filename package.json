@@ -1,6 +1,6 @@
 {
   "name": "storage-time",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "a local time storage plugin for js",
   "main": "dist/index.js",
   "sideEffects": false,
@@ -15,7 +15,7 @@
     "url": "https://github.com/Yicoding/storage-time.git"
   },
   "scripts": {
-    "babel": "npx babel src --out-dir babel-output",
+    "babel": "npx babel src --out-dir dist",
     "webpack": "webpack",
     "rollup": "npx rollup src/index.js -d rollup-output --format iife",
     "server": "webpack-dev-server"
